@@ -6,6 +6,7 @@ class Category
 {
     private $db;
     private $errors = [];
+    private $codes = [];
 
     public function __construct()
     {
@@ -20,9 +21,8 @@ class Category
             VALUES (:name)";
             $this->db->query($sql);
             $this->db->bind(":name", $name);
-            $this->db->execute();
 
-            return true;
+            return $this->db->execute();
         } else {
             return false;
         }
@@ -80,18 +80,18 @@ class Category
         $this->db->bind(":name", $name);
 
         if ($this->db->getNumberOfRows() === 1) {
-            array_push($this->errors, Constants::$categoryExists);
+            array_push($this->codes, 'exists');
         }
 
         if (!preg_match('/^[A-Za-z]+$/', $name)) {
-            array_push($this->errors, Constants::$categoryNameType);
+            array_push($this->codes, 'type');
         }
 
         if (strlen($name) < 3 || strlen($name) > 30) {
-            array_push($this->errors, Constants::$categoryNameLength);
+            array_push($this->codes, 'length');
         }
 
-        if (!empty($this->errors)) {
+        if (!empty($this->codes)) {
             return false;
         }
 
@@ -101,5 +101,10 @@ class Category
     public function getError()
     {
         return $this->errors;
+    }
+
+    public function getCodes()
+    {
+        return $this->codes;
     }
 }

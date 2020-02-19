@@ -1,28 +1,23 @@
-.message 
-    width: 50%
-    margin-left: auto
-    margin-right: auto
-    border-radius: 8px
-    text-align: center
-    ul
-        list-style: none
-        display: flex
-        flex-direction: column
-        padding: 0
-
-
-.error 
-    background-color: rgba(230, 53, 53, 0.3)
-    color: red
-
-
-.message.error li 
-    border: 1px solid red
-    border-collapse: collapse
-    border-left: none
-    border-right: none
-
-
-.success 
-    background-color: greenyellow
-    color: green
+.message
+    align-self: center
+    width: auto
+    &__success
+        padding:
+            top: 10px
+            bottom: 10px
+            left: 5px
+            right: 5px
+        border-radius: 8px
+        background-color: lightgreen
+        color: green
+    &__error
+        padding:
+            top: 10px
+            bottom: 10px
+            left: 5px
+            right: 5px
+        border-radius: 8px
+        background-color: #F2A3AA
+        color: black
+            
+            
