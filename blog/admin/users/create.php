@@ -49,9 +49,9 @@ if (isset($_POST['submit'])) {
         <input type="file" name="avatar" id="avatar" class="create-form__input">
 
         <label for="role"></label>
-        <select name="is_admin" id="role" class="create-form__select">
+        <select name="role_id" id="role" class="create-form__select">
             <option value="1">Admin</option>
-            <option value="0">Subscriber</option>
+            <option value="2">Subscriber</option>
         </select>
 
         <input type="submit" name='submit' value="Create" class="form-button">

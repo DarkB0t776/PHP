@@ -38,6 +38,66 @@ class User
         }
     }
 
+    public function update($data, $id)
+    {
+
+        if ($this->validateData($data['full_name'], $data['username'], $data['email'], $data['avatar'])) {
+
+            $whitelist = [
+                'full_name',
+                'username',
+                'email',
+                'role_id'
+            ];
+            $comma = ' ';
+            $sql = "UPDATE users SET";
+            foreach ($data as $key => $value) {
+                if (in_array($key, $whitelist) && !empty($value)) {
+                    $sql .= $comma . $key . '=' . "'$value'";
+                    $comma = ',';
+                }
+            }
+
+            if ($data['avatar']['name'] != '') {
+                $avatar = $this->uploadImage($data['avatar']);
+                $sql .= ", avatar = '$avatar'";
+            }
+
+            if (!empty($data['password'])) {
+                $pass = $this->generatePass($data['password']);
+                $sql .= ", password = '$pass'";
+            }
+
+            $sql .= " WHERE id = $id";
+
+            $this->db->query($sql);
+            return $this->db->execute();
+        } else {
+            return false;
+        }
+    }
+
+    public function getUsers()
+    {
+        $sql = "SELECT users.*, roles.name AS role 
+        FROM users
+        JOIN roles ON roles.id = users.role_id";
+        $this->db->query($sql);
+
+        return $this->db->getResultSet();
+    }
+
+    public function getUserById($id)
+    {
+        $sql = "SELECT users.*, roles.name AS role 
+        FROM users 
+        JOIN roles ON roles.id = users.role_id
+        WHERE users.id = $id";
+        $this->db->query($sql);
+
+        return $this->db->getSingleResult();
+    }
+
     private function uploadImage($image)
     {
         if ($image['name'] ===  '') {
@@ -148,10 +208,15 @@ class User
 
     private function validateImage($image)
     {
-        $ext = strtolower(pathinfo(basename($image['name']), PATHINFO_EXTENSION));
+        if ($image['name'] != '') {
 
-        if ($ext !== 'jpg' && $ext !== 'jpeg' && $ext !== "png") {
-            array_push($this->errors, Constants::$imageType);
+            $ext = strtolower(pathinfo(basename($image['name']), PATHINFO_EXTENSION));
+
+            if ($ext !== 'jpg' && $ext !== 'jpeg' && $ext !== "png") {
+                array_push($this->errors, Constants::$imageType);
+            }
+        } else {
+            return;
         }
     }
 }
