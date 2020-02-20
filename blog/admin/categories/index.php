@@ -9,7 +9,7 @@ $categories = new Category();
         <h1 class="show-items__title">Categories</h1>
         <a class="show-items__create-button" href="create.php">Create Category</a>
     </div>
-    <div class="message" id="message"></div>
+    <?php displayMessage(); ?>
     <table class="show-items__table">
         <thead>
             <th>Name</th>

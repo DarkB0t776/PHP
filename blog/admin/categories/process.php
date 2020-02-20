@@ -4,14 +4,22 @@ require_once __DIR__ . '/../../includes/classes/Sanitizer.php';
 
 $categoryObj = new Category();
 
-$data = ['name' => Sanitizer::sanitizeString($_POST['name'])];
+
+$data = [];
+$whiteList = ['name'];
+
+foreach ($_POST as $key => $value) {
+    if (in_array($key, $whiteList)) {
+        $data[$key] = Sanitizer::sanitizeString($value);
+    }
+}
 
 $wasSuccessful = $categoryObj->create($data);
 
 
 
 if ($wasSuccessful) {
-    echo 'success';
+    echo 'category_success';
 } else {
     $errors = $categoryObj->getCodes();
     echo $errors[0];

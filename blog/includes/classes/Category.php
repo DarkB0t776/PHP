@@ -80,15 +80,15 @@ class Category
         $this->db->bind(":name", $name);
 
         if ($this->db->getNumberOfRows() === 1) {
-            array_push($this->codes, 'exists');
+            array_push($this->codes, 'category_exists');
         }
 
         if (!preg_match('/^[A-Za-z]+$/', $name)) {
-            array_push($this->codes, 'type');
+            array_push($this->codes, 'category_type');
         }
 
         if (strlen($name) < 3 || strlen($name) > 30) {
-            array_push($this->codes, 'length');
+            array_push($this->codes, 'category_length');
         }
 
         if (!empty($this->codes)) {

@@ -11,6 +11,9 @@
         <a href="../categories/index.php" class="main-nav__text"><i class="fas fa-clipboard-list"></i> Categories</a>
     </div>
     <div class="main-nav__link">
+        <a href="../roles/index.php" class="main-nav__text"><i class="fas fa-user-tag"></i> Roles</a>
+    </div>
+    <div class="main-nav__link">
         <a href="../comments/index.php" class="main-nav__text"><i class="fas fa-comment-dots"></i> Comments</a>
     </div>
 </nav>

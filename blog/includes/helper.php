@@ -36,18 +36,22 @@ function displayMessage()
                     $ulLink .= "<li>$message</li>";
                 }
                 print <<<HTML
-                        <div class="message {$messageType}">
-                            <ul>
-                                $ulLink
-                            </ul>
+                        <div class="message">
+                            <div class="message__{$messageType}">
+                                <ul class="message__ul">
+                                    $ulLink
+                                </ul>
+                            </div>
                         </div>
                  HTML;
             } else {
                 print <<<HTML
-                <div class="message success">
-                    <ul>
-                        <li>{$messages[0]}</li>
-                    </ul>
+                <div class="message">
+                    <div class="message__success">
+                        <ul class="message__ul">
+                            <li>{$messages[0]}</li>
+                        </ul>
+                    </div>
                 </div>
          HTML;
             }

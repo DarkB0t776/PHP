@@ -24,4 +24,8 @@ class Constants
     public static $emailInvalid = "Email is invalid";
     public static $emailLength = "Email should not be greater than 100 characters";
     public static $emailExists = "Email already exists";
+
+    public static $roleNameType = 'Role name can only consist of A-Z,a-z';
+    public static $roleNameLength = "Role name should not be less than 3 or greater than 50 characters";
+    public static $roleExists = "Role already exists";
 }
