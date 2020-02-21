@@ -28,8 +28,10 @@ body {
   height: 100%;
 }
 .main-nav__logo .logo {
+  text-decoration: none;
   font-family: "eurofurence";
   font-size: 3.312rem;
+  color: inherit;
 }
 .main-nav__logo .dot {
   font-family: "eurofurence";
