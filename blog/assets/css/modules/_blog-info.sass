@@ -1,0 +1,30 @@
+.blog-info
+    display: flex
+    flex-direction: column
+    width: 405px
+    &__title
+        font-family: $latoFont
+        font-weight: 700
+        font-size: 2.3rem
+        color: $titleColor
+        margin: 0
+    &__description
+        font-family: $latoFont
+        font-size: 1.2rem
+        line-height: 1.66rem
+        color: $descColor
+        word-wrap: break-word
+        margin-bottom: 45px
+    &__read-more
+        display: inline-block
+        font-family: $latoFont
+        font-size: 1.2rem
+        text-decoration: none
+        width: 50%
+        padding: 12px 24px
+        color: $readMoreColor
+        border: 2px solid $readMoreColor
+        border-radius: 50px
+        &:hover
+            border-color: $mainGreen
+            color: $mainGreen

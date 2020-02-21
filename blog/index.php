@@ -26,6 +26,23 @@
             <!-- /.main-nav__links -->
         </div>
     </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="blog-image">
+                <img src="assets/img/4646940.jpg" alt="">
+            </div>
+            <!-- /.blog-image -->
+            <div class="blog-info">
+                <h1 class="blog-info__title">Python Course</h1>
+                <p class="blog-info__description">flasdfjsld;ajvohyoahtradslkhnflkvjadsl;fjsldrlasjsldrlasjsldrlasjsldrlasuflsdajcdsljv</p>
+                <a href="#" class="blog-info__read-more">Continue Reading</a>
+            </div>
+            <!-- /.blog-info -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
 </body>
 
 </html>

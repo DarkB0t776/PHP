@@ -5,6 +5,7 @@
     &__items
         display: flex
         justify-content: space-around
+        flex-wrap: wrap
         height: 100%
     &__logo
         display: flex
@@ -23,7 +24,7 @@
         align-items: center
         a
             display: block
-            font-family: 'Lato', sans-serif
+            font-family: $latoFont
             font-weight: 700
             font-size: 1.3rem
             height: 100%
@@ -33,7 +34,8 @@
             border:
                 left: 1px solid #1d1d1d
                 right: 1px solid #1d1d1d
-            &:hover
+            &:hover,
+            &:active
                 border-bottom: 5px solid $mainGreen
                 color: $mainGreen
 
