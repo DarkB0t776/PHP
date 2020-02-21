@@ -1,0 +1,60 @@
+@font-face {
+  font-family: "eurofurence";
+  src: url(../fonts/eurof55-webfont.woff2) format("woff2");
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.main-nav {
+  height: 130px;
+  background-color: #292929;
+}
+.main-nav__items {
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+}
+.main-nav__logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.main-nav__logo .logo {
+  font-family: "eurofurence";
+  font-size: 3.312rem;
+}
+.main-nav__logo .dot {
+  font-family: "eurofurence";
+  font-size: 3.312rem;
+  color: #58c93a;
+}
+.main-nav__links {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.main-nav__links a {
+  display: block;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  height: 100%;
+  padding: 49px 38px;
+  text-decoration: none;
+  color: inherit;
+  border-left: 1px solid #1d1d1d;
+  border-right: 1px solid #1d1d1d;
+}
+.main-nav__links a:hover {
+  border-bottom: 5px solid #58c93a;
+  color: #58c93a;
+}
+
+/*# sourceMappingURL=style.css.map */
