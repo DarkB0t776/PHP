@@ -1,5 +1,4 @@
 <?php require_once 'includes/header.php' ?>
-
 <?php
 $postObj = new Post();
 $posts = $postObj->getPosts();
@@ -7,6 +6,7 @@ $posts = $postObj->getPosts();
 
 
 <div class="container">
+
     <?php foreach ($posts as $post) { ?>
         <div class="row">
             <div class="blog-image">

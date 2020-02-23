@@ -29,12 +29,12 @@ body {
 }
 .main-nav__logo .logo {
   text-decoration: none;
-  font-family: "eurofurence";
+  font-family: "eurofurence", sans-serif;
   font-size: 3.312rem;
   color: inherit;
 }
 .main-nav__logo .dot {
-  font-family: "eurofurence";
+  font-family: "eurofurence", sans-serif;
   font-size: 3.312rem;
   color: #58c93a;
 }
@@ -72,7 +72,7 @@ body {
 .row {
   display: flex;
   width: 100%;
-  margin-bottom: 80px;
+  margin-top: 80px;
 }
 
 .blog-image {
@@ -120,6 +120,49 @@ body {
 .blog-info__read-more:hover {
   border-color: #58c93a;
   color: #58c93a;
+}
+
+.main-footer {
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main-footer__title {
+  margin-top: 80px;
+  color: black;
+  font-family: "eurofurence", sans-serif;
+  font-size: 3.312rem;
+}
+.main-footer__title .dot {
+  font-family: "eurofurence", sans-serif;
+  font-size: 3.312rem;
+  color: #58c93a;
+}
+.main-footer__info p {
+  font-family: "Lato", sans-serif;
+  font-size: 1.078rem;
+  color: #a6a6a6;
+}
+.main-footer__socials {
+  display: flex;
+  margin-bottom: 80px;
+}
+.main-footer__socials .social-link {
+  display: block;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  background-color: #e5e5e5;
+  margin-right: 20px;
+  padding: 12px 0;
+}
+.main-footer__socials .social-link img {
+  display: inline-block;
+}
+.main-footer__socials .social-link:hover {
+  background-color: #516fad;
 }
 
 /*# sourceMappingURL=style.css.map */
