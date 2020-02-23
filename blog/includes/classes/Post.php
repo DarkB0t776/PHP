@@ -103,6 +103,24 @@ class Post
         return $this->db->getSingleResult();
     }
 
+    public function getPaginatePosts($num_of_posts, $offset)
+    {
+        $data = [];
+
+        $totalPagesSql = "SELECT * FROM posts";
+        $this->db->query($totalPagesSql);
+        $totalRows = $this->db->getNumberOfRows();
+        $totalPages = ceil($totalRows / $num_of_posts);
+
+        $sql = "SELECT * FROM posts LIMIT $offset, $num_of_posts";
+        $this->db->query($sql);
+
+        $data['totalPages'] = $totalPages;
+        $data['posts'] = $this->db->getResultSet();
+
+        return $data;
+    }
+
     private function validateData($title, $description, $image)
     {
         $this->validateTitle($title);

@@ -165,4 +165,30 @@ body {
   background-color: #516fad;
 }
 
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 110px;
+  margin-bottom: 30px;
+}
+.pagination a {
+  display: block;
+  text-decoration: none;
+  font-family: "Lato", sans-serif;
+  font-size: 1.49rem;
+  color: #818181;
+}
+.pagination a .arr-left {
+  margin-right: 4px;
+}
+.pagination a .arr-right {
+  margin-left: 4px;
+}
+.pagination a:hover {
+  color: #605c5c;
+}
+.pagination .disabled {
+  visibility: hidden;
+}
+
 /*# sourceMappingURL=style.css.map */
