@@ -136,7 +136,7 @@ input[type=submit] {
 .create-form__text {
   width: 100%;
   border: none;
-  height: 10rem;
+  height: auto;
   background-color: white;
 }
 .create-form__img {

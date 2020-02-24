@@ -1,0 +1,34 @@
+.post-info
+    display: flex
+    flex-direction: column
+    align-items: center
+    font-family: $latoFont
+    color: black
+    &__image
+        width: 60%
+        height: 60%
+    &__title
+        font-size: 3rem
+        margin-bottom: 0
+    .post-author
+        display: flex
+        justify-content: space-between
+        width: 60%
+        margin-top: 5px 
+        &__name,
+        .post-category,
+        .post-date
+            margin: 0
+            font-size: 1.3rem
+            font-weight: 600 
+    &__content
+        width: 60%
+        margin-top: 15px
+        font-size: 1.2rem
+        text-align: justify
+    a
+        text-decoration: none
+        color: black
+        &:hover
+            color: #7e7979ee
+        

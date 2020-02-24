@@ -28,7 +28,7 @@ $posts = $postObj->getPaginatePosts($numOfPostsPerPage, $offset);
             <div class="blog-info">
                 <h1 class="blog-info__title"><?= $post->title ?></h1>
                 <p class="blog-info__description"><?= $post->description ?></p>
-                <a href="#" class="blog-info__read-more">Continue Reading</a>
+                <a href="post.php?id=<?= $post->id ?>" class="blog-info__read-more">Continue Reading</a>
             </div>
             <!-- /.blog-info -->
         </div>
