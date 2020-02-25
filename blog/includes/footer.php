@@ -6,7 +6,7 @@
     <div class="main-footer__socials">
         <a href="#" class="social-link"><img src="assets/img/socials/facebook.png" alt="facebook"></a>
         <a href="#" class="social-link"><img src="assets/img/socials/twitter.png" alt="twitter"></a>
-        <a href="#" class="social-link"><img src="assets/img/socials/Be.png" alt="Be"></a>
+        <a href="#" class="social-link"><img src="assets/img/socials/be.png" alt="Be"></a>
         <a href="#" class="social-link"><img src="assets/img/socials/wheel.png" alt="wheel"></a>
     </div>
 </footer>

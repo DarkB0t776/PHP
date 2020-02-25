@@ -26,7 +26,7 @@
                     <input type="password" class="form-group__input" name="password" id="password" placeholder="Password" required>
                 </div>
                 <div class="buttons">
-                    <a href="index.php">Back</a>
+                    <a href="index.php">&#10229; Back</a>
                     <button class="signup-form__button" type="submit" name="submit" id="submit">Sign Up</button>
                 </div>
             </form>
