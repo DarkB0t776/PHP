@@ -233,4 +233,102 @@ body {
   color: #7e7979ee;
 }
 
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+}
+.signup-container .signup {
+  color: black;
+  width: 30%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 1px 5px black;
+}
+.signup-container .signup .signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+}
+.signup-container .signup .signup-form__button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #1297f0;
+  color: white;
+  border-radius: 6px;
+  font-family: "Lato", sans-serif;
+  cursor: pointer;
+}
+.signup-container .signup .signup-form__button:hover {
+  background-color: #7bc0ee;
+}
+.signup-container .signup .signup-form__button:active {
+  outline: none;
+}
+.signup-container .signup .form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.signup-container .signup .form-group input {
+  width: 70%;
+  height: 25px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+}
+.signup-container .signup .form-group input:focus {
+  outline: none;
+}
+.signup-container .signup .buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+}
+.signup-container .signup .buttons a {
+  text-decoration: none;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  margin-left: 50px;
+}
+
+.message {
+  width: 100%;
+  height: 13%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.message__error {
+  background-color: #fa9e9a;
+  border-radius: 8px;
+  width: 95%;
+  height: 100%;
+  padding: 5px 0;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  color: red;
+}
+.message__success {
+  background-color: #92f0b1;
+  border-radius: 8px;
+  width: 95%;
+  height: 100%;
+  padding: 5px 0;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  color: #26e61f;
+}
+
 /*# sourceMappingURL=style.css.map */

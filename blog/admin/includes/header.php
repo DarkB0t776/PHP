@@ -12,7 +12,7 @@ require_once '../../includes/loader.php';
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.1/trix.css">
     <link rel="stylesheet" href="../assets/css/style.css" />
-    <script src="../assets/js/jquery-3.4.1.min.js"></script>
+    <script src="../../../assets/js/jquery-3.4.1.min.js"></script>
     <script src="../assets/js/ajax.js"></script>
     <title>Document</title>
 </head>

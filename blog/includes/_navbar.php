@@ -10,6 +10,7 @@
             <a href="#" class="main-nav__link">About</a>
             <a href="#" class="main-nav__link">Work</a>
             <a href="#" class="main-nav__link">Contact</a>
+            <a href="/signup.php" class="main-nav__link">Sign Up</a>
         </div>
         <!-- /.main-nav__links -->
     </div>
