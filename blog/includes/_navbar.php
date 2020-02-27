@@ -10,7 +10,14 @@
             <a href="#" class="main-nav__link">About</a>
             <a href="#" class="main-nav__link">Work</a>
             <a href="#" class="main-nav__link">Contact</a>
-            <a href="/signup.php" class="main-nav__link">Sign Up</a>
+            <?php
+
+            if (!$_SESSION['userLoggedIn']) { ?>
+                <a href="/signup.php" class="main-nav__link">Sign Up</a>
+                <a href="/signin.php" class="main-nav__link">Sign In</a>
+            <?php } else { ?>
+                <a href="/logout.php" class="main-nav__link">Log Out</a>
+            <?php } ?>
         </div>
         <!-- /.main-nav__links -->
     </div>

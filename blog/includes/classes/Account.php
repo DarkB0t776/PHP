@@ -31,6 +31,31 @@ class Account
         }
     }
 
+    public function login($data)
+    {
+        $username = $data['username'];
+        $password = $this->generatePass($data['password']);
+        
+            $sql = "SELECT * FROM users WHERE username = :un AND password = :pass";
+            $this->db->query($sql);
+            $this->db->bind(":un", $username);
+            $this->db->bind(":pass", $password);
+
+            if($this->db->getNumberOfRows() == 1){
+                return [
+                    'userLoggedIn' => true,
+                    'userData' => $this->db->getSingleResult()
+                ];
+            }else{
+                array_push($this->codes, 'incorrect_data');
+                return ['userLoggedIn' => false];
+            }
+
+        
+
+
+    }
+
     private function generatePass($pass)
     {
         $pass = hash('SHA256', $pass);

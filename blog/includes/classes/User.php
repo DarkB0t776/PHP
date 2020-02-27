@@ -77,6 +77,15 @@ class User
         }
     }
 
+    public function delete($id)
+    {
+        $sql = "DELETE FROM users WHERE id = :id LIMIT 1";
+        $this->db->query($sql);
+        $this->db->bind(":id", $id);
+
+        return $this->db->execute();
+    }
+
     public function getUsers()
     {
         $sql = "SELECT users.*, roles.name AS role 

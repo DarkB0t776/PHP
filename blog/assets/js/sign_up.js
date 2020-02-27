@@ -15,14 +15,14 @@ $(document).ready(() => {
 
     $.ajax({
       type: 'POST',
-      url: 'process.php',
+      url: '/ajax/process_signup.php',
       data: `username=${username}&email=${email}&password=${pass}`,
       success: code => {
         if (code === 'signup') {
           $('#message').html(
             '<div class="message__success">Sign Up Successfully</div>'
           );
-          window.location.href = 'index.php';
+          window.location.href = '/';
         } else if (code === 'unExists') {
           $('#message').html(`<div class="message__error">${unExists}</div>`);
         } else if (code === 'unFormat') {
@@ -42,6 +42,7 @@ $(document).ready(() => {
         }
       }
     });
+
     return false;
   });
 });

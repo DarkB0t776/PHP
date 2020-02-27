@@ -1,8 +1,7 @@
 <?php
 
-require_once __DIR__ . '/includes/classes/Account.php';
-require_once __DIR__ . '/includes/classes/Sanitizer.php';
-require_once __DIR__ . '/includes/helper.php';
+require_once __DIR__ . '/../includes/classes/Account.php';
+require_once __DIR__ . '/../includes/classes/Sanitizer.php';
 
 $data = [];
 $whiteList = ['username', 'email'];
@@ -19,7 +18,6 @@ $wasSuccessful = $account->register($data);
 
 if ($wasSuccessful) {
     echo 'signup';
-    header('Location: index.php');
 } else {
     $code = $account->getCode();
     echo $code[0];
