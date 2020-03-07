@@ -18,13 +18,13 @@ $userLogged = $account->login($data);
 
 if ($userLogged['userLoggedIn']) {
     $_SESSION['userLoggedIn'] = true;
-    $_SESSION['userId'] = $userLogged['id'];
-    $_SESSION['userFullName'] = $userLogged['full_name'];
-    $_SESSION['username'] = $userLogged['username'];
-    $_SESSION['userEmail'] = $userLogged['email'];
-    $_SESSION['userRole'] = $userLogged['role_id'];
-
-    header('Location: index.php');
+    $_SESSION['userId'] = $userLogged['userData']->id;
+    $_SESSION['userFullName'] = $userLogged['userData']->full_name;
+    $_SESSION['username'] = $userLogged['userData']->username;
+    $_SESSION['userEmail'] = $userLogged['userData']->email;
+    $_SESSION['userRole'] = $userLogged['userData']->role_id;
+    $_SESSION['userAvatar'] = $userLogged['userData']->avatar;
+    echo 'signin';
 } else {
     $code = $account->getCode();
     echo $code[0];

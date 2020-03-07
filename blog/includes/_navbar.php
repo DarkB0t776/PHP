@@ -12,10 +12,11 @@
             <a href="#" class="main-nav__link">Contact</a>
             <?php
 
-            if (!$_SESSION['userLoggedIn']) { ?>
+            if (!isset($_SESSION['userLoggedIn'])) { ?>
                 <a href="/signup.php" class="main-nav__link">Sign Up</a>
                 <a href="/signin.php" class="main-nav__link">Sign In</a>
             <?php } else { ?>
+                <a href="/admin/index.php" class="main-nav__link">Admin</a>
                 <a href="/logout.php" class="main-nav__link">Log Out</a>
             <?php } ?>
         </div>

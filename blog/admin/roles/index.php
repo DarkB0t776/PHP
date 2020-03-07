@@ -4,7 +4,7 @@
 $roleObj = new Role();
 $roles = $roleObj->getRoles();
 ?>
-
+<?php require_once __DIR__ . '/../includes/modal.php' ?>
 <div class="show-items">
     <div class="show-items__header">
         <h1 class="show-items__title">Roles</h1>

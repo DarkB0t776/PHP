@@ -14,7 +14,7 @@ $(document).ready(() => {
           $('#message').html(
             '<div class="message__success">Sign In Successfully</div>'
           );
-          window.location.href = '/';
+          window.location.href = '../index.php';
         } else if (code === 'incorrect_data') {
           $('#message').html(
             `<div class="message__error">${incorrectData}</div>`

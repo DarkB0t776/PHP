@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
     $data = [
         'title' => Sanitizer::sanitizeString($_POST['title']),
         'category_id' => Sanitizer::sanitizeInt($_POST['category_id']),
-        'user_id' => 1,
+        'user_id' => $_SESSION['userId'],
         'description' => Sanitizer::sanitizeString($_POST['description']),
         'content' => trim($_POST['content']),
         'image' => $_FILES['image'],

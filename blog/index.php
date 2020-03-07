@@ -20,6 +20,7 @@ $posts = $postObj->getPaginatePosts($numOfPostsPerPage, $offset);
 <div class="container">
 
     <?php foreach ($posts['posts'] as $post) { ?>
+        <?php if($post->status){ ?>
         <div class="row">
             <div class="blog-image">
                 <img src="assets/img/<?= $post->image ?>" alt="">
@@ -33,6 +34,7 @@ $posts = $postObj->getPaginatePosts($numOfPostsPerPage, $offset);
             <!-- /.blog-info -->
         </div>
         <!-- /.row -->
+        <?php } ?>
     <?php } ?>
 
     <div class="pagination">

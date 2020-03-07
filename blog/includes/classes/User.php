@@ -23,15 +23,15 @@ class User
         if ($this->validateData($data['full_name'], $data['username'], $data['email'], $data['avatar'])) {
             $avatar = $this->uploadImage($data['avatar']);
             $pass = $this->generatePass($data['password']);
-            $sql = "INSERT INTO users(full_name, username, email, password, avatar, is_admin)
-                    VALUES(:f_name, :username, :email, :pass, :avatar, :admin)";
+            $sql = "INSERT INTO users(full_name, username, email, password, avatar, role_id)
+                    VALUES(:f_name, :username, :email, :pass, :avatar, :role)";
             $this->db->query($sql);
             $this->db->bind(":f_name", $data['full_name']);
             $this->db->bind(":username", $data['username']);
             $this->db->bind(":email", $data['email']);
             $this->db->bind(":pass", $pass);
             $this->db->bind(":avatar", $avatar);
-            $this->db->bind(":admin", $data['is_admin']);
+            $this->db->bind(":role", $data['role_id']);
             return $this->db->execute();
         } else {
             return false;

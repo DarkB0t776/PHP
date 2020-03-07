@@ -3,7 +3,7 @@
 <?php
 $categories = new Category();
 ?>
-
+<?php require_once __DIR__ . '/../includes/modal.php' ?>
 <div class="show-items">
     <div class="show-items__header">
         <h1 class="show-items__title">Categories</h1>

@@ -5,6 +5,10 @@ if (isset($_GET['id'])) {
     $id = Sanitizer::sanitizeInt($_GET['id']);
     $postObj = new Post($id);
     $post = $postObj->getPostById($id);
+
+    $commentObj = new Comment();
+
+    $comments = $commentObj->getCommentsByPostId($id);
 }
 ?>
 
@@ -18,8 +22,47 @@ if (isset($_GET['id'])) {
         </div>
         <h1 class="post-info__title"><?= $post->title ?></h1>
         <div class="post-info__content"><?= $post->content ?></div>
-
     </div>
+
+    <hr>
+
+    <?php if(isset($_SESSION['userLoggedIn'])) { ?>
+
+        <div class="post-comment">
+            <h2 class="post-comment__header">Post your comment here:</h2>
+            <div id="message"></div>
+            <div class="enter-comment">
+                <form action="ajax/process_comment.php" method="POST" class="enter-comment__form">
+                    <textarea name="content" id="content" class="enter-comment__content"></textarea>
+                    <input type="hidden" name="user_id" id="author_id" value="<?= isset($_SESSION['userId']) ? $_SESSION['userId'] : '' ?>">
+                    <input type="hidden" name="post_id" id="post_id" value="<?= $post->id ?>">
+                    <button type="submit" id="post" class="enter-comment__button">Post</button>
+                </form>
+            </div>
+        </div>
+        <!-- /.post-comment -->
+    <?php } ?>
+
+    <div class="comments">
+        <?php if(!empty($comments)) { ?>
+            <h3 class="comments__header">All Comments</h3>
+            <?php foreach($comments as $comment){ ?>
+                    <div class="comment-data">
+                        <div class="author-data">
+                            <img src="/assets/avatar/<?= $comment->author_avatar ?>" alt="" class="author-data__avatar">
+                            <span class="author-data__username"><?= $comment->author_name ?></span>
+                        </div>
+                        <p class="comment-data__content" id="content"><?= $comment->content ?></p>
+                    </div>
+                    <!-- /.comment-data -->        
+            <?php } ?>
+            <?php }else { ?>
+                <h3 class="comments__header">No Comments Yet</h3>
+            <?php } ?>
+    </div>
+    <!-- /.comments -->
+
+
 </div>
 
 <?php require_once 'includes/footer.php' ?>

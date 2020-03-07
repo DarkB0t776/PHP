@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
         'email' => Sanitizer::sanitizeEmail($_POST['email']),
         'password' => $_POST['password'],
         'avatar' => $_FILES['avatar'],
-        'is_admin' => Sanitizer::sanitizeInt($_POST['is_admin'])
+        'role_id' => Sanitizer::sanitizeInt($_POST['role_id'])
     ];
 
     $wasSuccessful = $userObj->create($data);
